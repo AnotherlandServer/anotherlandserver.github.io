@@ -1,0 +1,46 @@
+// Custom.scss
+
+// Import Bootstrap functions (required for color calculations)
+@import "bootstrap/scss/functions";
+
+// Import Bootstrap variables (required to override defaults)
+@import "bootstrap/scss/variables";
+
+// Override Bootstrap color variables
+$primary: rgb(194, 41, 124); // Primary color
+$secondary: rgb(80, 32, 84); // Secondary color for gradients
+
+// Import the rest of Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+  color: $primary;
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      $secondary
+    )
+    $primary;
+}
+
+#anotherland-logo {
+  background-image: url('/Anotherland-logo.jpg');
+  background-position: center center;
+  background-size: cover;
+  min-height: 100px;
+}
+
+@media (min-width: map-get($grid-breakpoints, 'lg')) {
+  #anotherland-logo {
+    min-height: 200px;
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, 'xxl')) {
+  #anotherland-logo {
+    min-height: 300px;
+  }
+}
+
+// Add your custom theme styles here
